@@ -1,0 +1,27 @@
+{
+  "name": "node-samba2",
+  "version": "0.2.7",
+  "description": "SMB2 Client from node-smb2 0.2.7 ",
+
+  "main": "lib/smb2.js",
+
+  "scripts": {
+    "test": "make test"
+  },
+
+  "dependencies": {
+    "ntlm": "~0.1.1"
+  },
+
+  "keywords": [
+    "node",
+    "samba",
+    "SMB2",
+    "SMB3",
+    "NTLM",
+    "CIFS"
+  ],
+
+  "author": "ccboby",
+  "license": "MIT"
+}
