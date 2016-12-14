@@ -1,8 +1,10 @@
 {
   "name": "smb2c",
-  "version": "0.2.10",
-  "description": "SMB2 Client from node-smb2 0.2.7 ",
-
+  "version": "0.7.2",
+  "description": "SMB2 Client from marsaud-smb2 0.7.2 ",
+  "engines": [
+    "node"
+  ],
   "main": "lib/smb2.js",
 
   "repository": {
@@ -15,18 +17,32 @@
   },
 
   "dependencies": {
+    "babel-runtime": "^5.8.34",
+    "bluebird": "^2.10.2",
     "ntlm": "~0.1.1"
   },
 
   "keywords": [
-    "node",
-    "samba",
+    "SMB",
     "SMB2",
     "SMB3",
     "NTLM",
-    "CIFS"
+    "CIFS",
+    "Samba"
   ],
-
+  "scripts": {
+    "build": "./node_modules/.bin/babel --source-maps --out-dir=lib/api/ lib/api/src",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "babel": "^5.8.34",
+    "babel-eslint": "^4.1.6",
+    "source-map-support": "^0.4.0",
+    "standard": "^5.4.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
   "author": "ccboby",
   "license": "MIT"
 }

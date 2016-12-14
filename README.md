@@ -7,14 +7,14 @@
 
 ## Introduction
 
-This library is a simple implementation of SMB2 for Node.js. It allows you to access a SMB2 share as if you were using the native fs library.
+This library is a simple implementation of marsaud-smb2 for Node.js. It allows you to access a SMB2 share as if you were using the native fs library.
 
 The development is still at an experimental stage and should not be yet considered for production environment.
 
 ## Installation
 
 ```bash
-npm install -S smb2
+npm install -S samba2
 ```
 
 ## API
