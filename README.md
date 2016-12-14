@@ -1,7 +1,4 @@
-# samba2 base on SMB2 Client for Node.js
-
-### readdir(): add  judge is folder or not
-
+# SMB2 Client for Node.js
 
 [![NPM version](https://badge.fury.io/js/smb2.svg)](http://badge.fury.io/js/smb2) [![Dependency Status](https://david-dm.org/bchelli/node-smb2.svg?theme=shields.io)](https://david-dm.org/bchelli/node-smb2) [![Code Climate](https://codeclimate.com/github/bchelli/node-smb2.svg)](https://codeclimate.com/github/bchelli/node-smb2)
 
@@ -11,10 +8,12 @@ This library is a simple implementation of marsaud-smb2 for Node.js. It allows y
 
 The development is still at an experimental stage and should not be yet considered for production environment.
 
+add fileAttributes in readdir result Used to determine whether the file or folder
+mabe 0x0010 is folder,  0x0100 is file.
 ## Installation
 
 ```bash
-npm install -S samba2
+npm install -S smb2c
 ```
 
 ## API
@@ -48,10 +47,6 @@ var smb2Client = new SMB2({
 
 ### smb2Client.readdir ( path, callback )
 Asynchronous readdir(3). Reads the contents of a directory. The callback gets two arguments (err, files) where files is an array of the names of the files in the directory excluding '.' and '..'.
-add judgment is a file or folder , such as 
-```javascript
-[{fileName:XXXX,folder:true}]
-```
 
 Example:
 ```javascript
@@ -148,6 +143,32 @@ smb2Client.rename('path\\to\\my\\file.txt', 'new\\path\\to\\my\\new-file-name.tx
 
 ### smb2Client.close ( )
 This function will close the open connection if opened, it will be called automatically after ```autoCloseTimeout``` ms of no SMB2 call on the server.
+
+### smb2Client.createReadStream ( fileName, [options], callback )
+Returns a read stream on the file. Unlike fs.createReadStream, this function is asynchronous, as we need use asynchronous smb requests to get the stream.
+
+Example:
+```javascript
+smb2Client.createReadStream('path\\to\\the\\file', function (err, readStream) {
+    if (err) throw err;
+    var writeStream = fs.createWriteStream('localFile')
+    readStream.pipe(writeStream)
+});
+```
+
+### smb2Client.createWriteStream ( fileName, [options], callback )
+Returns a write stream on the file. Unlike fs.createWriteStream, this function is asynchronous, as we need use asynchronous smb requests to get the stream.
+
+Example:
+```javascript
+smb2Client.createWriteStream('path\\to\\the\\file', function (err, readStream) {
+    if (err) throw err;
+    var readStream = fs.createReadStream('localFile')
+    readStream.pipe(writeStream)
+});
+```
+### smb2Client.ensureDir ( path, callback )
+Ensures that the directory exists. If the directory structure does not exist, it is created.
 
 ## Contributors
 - [Benjamin Chelli](https://github.com/bchelli)

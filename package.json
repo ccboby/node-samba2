@@ -1,6 +1,6 @@
 {
   "name": "smb2c",
-  "version": "0.7.2",
+  "version": "0.7.4",
   "description": "SMB2 Client from marsaud-smb2 0.7.2 ",
   "engines": [
     "node"
