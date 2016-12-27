@@ -8,8 +8,13 @@ This library is a simple implementation of marsaud-smb2 for Node.js. It allows y
 
 The development is still at an experimental stage and should not be yet considered for production environment.
 
-add fileAttributes in readdir result Used to determine whether the file or folder
-mabe 0x0010 is folder,  0x0100 is file.
+## Different 
+
+add fileAttributes in readdir result Used to determine whether the file or folder ,mabe 0x0010 is folder,  0x0100 is file. 
+
+add fileSize in readdir 
+
+
 ## Installation
 
 ```bash
