@@ -1,0 +1,6 @@
+编译
+npm run build
+
+发布
+1. 修改package.json版本号
+2. npm publish
