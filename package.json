@@ -1,6 +1,6 @@
 {
-  "name": "smb2c",
-  "version": "0.7.5",
+  "name": "@plugandtrade/smb2c",
+  "version": "0.7.6",
   "description": "SMB2 Client from marsaud-smb2 0.7.2 ",
   "engines": [
     "node"
@@ -9,7 +9,7 @@
 
   "repository": {
     "type": "git"
-  , "url": "https://github.com/ccboby/node-samba2"
+  , "url": "https://github.com/PlugAndTrade/node-samba2.git"
   },
 
   "scripts": {
