@@ -1,6 +1,6 @@
 {
   "name": "@plugandtrade/smb2c",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "SMB2 Client from marsaud-smb2 0.7.2 ",
   "engines": [
     "node"
